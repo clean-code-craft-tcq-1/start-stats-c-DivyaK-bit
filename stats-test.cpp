@@ -20,9 +20,9 @@ TEST_CASE("average is NaN for empty array") {
     Stats computedStats = compute_statistics(0, 0);
     //All fields of computedStats (average, max, min) must be
     //NAN (not-a-number), as defined in math.h
-    REQUIRE(isnan(computedStats.average));
-    REQUIRE(isnan(computedStats.max));
-    REQUIRE(isnan(computedStats.min));
+    REQUIRE(isnan(computedStats.average) == 0);
+    REQUIRE(isnan(computedStats.max) == 0);
+    REQUIRE(isnan(computedStats.min) == 0);
     //Design the REQUIRE statement here.
     //Use https://stackoverflow.com/questions/1923837/how-to-use-nan-and-inf-in-c
 }
@@ -44,24 +44,3 @@ TEST_CASE("raises alerts when max is greater than threshold") {
     REQUIRE(emailAlertCallCount == 1);
     REQUIRE(ledAlertCallCount == 1);
 }
-
-void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats)
-{
-    if ( computedStats > maxThreshold)
-    {
-        //change to for loop with size of
-        alerters[0];
-        alerters[1];
-    }
-}
-
-void emailAlerter ()
-{
-    emailAlertCallCount = 1;
-}   
-
-void ledAlerter () 
-{
-    ledAlertCallCount = 1;
-}
-
