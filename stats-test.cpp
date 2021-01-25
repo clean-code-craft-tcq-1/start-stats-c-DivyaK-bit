@@ -44,3 +44,24 @@ TEST_CASE("raises alerts when max is greater than threshold") {
     REQUIRE(emailAlertCallCount == 1);
     REQUIRE(ledAlertCallCount == 1);
 }
+
+void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats)
+{
+    if ( computedStats > maxThreshold)
+    {
+        //change to for loop with size of
+        alerters[0];
+        alerters[1];
+    }
+}
+
+void emailAlerter ()
+{
+    emailAlertCallCount = 1;
+}   
+
+void ledAlerter () 
+{
+    ledAlertCallCount = 1;
+}
+
