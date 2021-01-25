@@ -1,3 +1,4 @@
+  
 #include "stats.h"
 
 struct Stats compute_statistics(const float* numberset, int setlength) {
@@ -23,7 +24,7 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     }
     s.average = sum / setlength ;
   
-    return (s); 
+    return (s);  
 }
 
 int emailAlertCallCount = 0;
